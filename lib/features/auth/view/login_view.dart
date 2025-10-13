@@ -31,7 +31,7 @@ class _LoginViewState extends State<LoginView> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const Gap(100),
-                SvgPicture.asset('assets/images/logo.svg'),
+                SvgPicture.asset('assets/images/logo/logo.svg'),
                 const Gap(10),
                 const CustomText(
                   textAlign: TextAlign.center,

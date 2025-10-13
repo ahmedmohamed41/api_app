@@ -32,7 +32,7 @@ class _LoginViewState extends State<SignupView> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const Gap(100),
-                SvgPicture.asset('assets/images/logo.svg'),
+                SvgPicture.asset('assets/images/logo/logo.svg'),
                 const Gap(60),
                 CustomTextFormField(
                   controller: nameController,

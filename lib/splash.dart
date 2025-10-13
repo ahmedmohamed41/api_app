@@ -13,9 +13,9 @@ class SplashView extends StatelessWidget {
       body: Column(
         children: [
           const Gap(250),
-          SvgPicture.asset('assets/images/logo.svg'),
+          SvgPicture.asset('assets/images/logo/logo.svg'),
           const Spacer(),
-          Image.asset('assets/images/splash.png'),
+          Image.asset('assets/images/splash/splash.png'),
         ],
       ),
     );
