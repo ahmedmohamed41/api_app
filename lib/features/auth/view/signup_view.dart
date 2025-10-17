@@ -57,6 +57,8 @@ class _LoginViewState extends State<SignupView> {
                 ),
                 const Gap(30),
                 CustomElevatedButton(
+                  fgColor: AppColors.primary,
+                  bgColor: AppColors.white,
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       print('Sign Up success');

@@ -69,12 +69,12 @@ class _RootState extends State<Root> {
               icon: Icon(CupertinoIcons.cart),
             ),
             const BottomNavigationBarItem(
-              label: 'History',
-              icon: Icon(Icons.history_edu_outlined),
+              label: 'Order History',
+              icon: Icon(Icons.restaurant_menu_outlined),
             ),
             const BottomNavigationBarItem(
               label: 'Profile',
-              icon: Icon(CupertinoIcons.person),
+              icon: Icon(CupertinoIcons.profile_circled),
             ),
           ],
         ),

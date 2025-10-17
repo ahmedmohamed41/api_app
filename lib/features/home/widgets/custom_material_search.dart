@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomMaterialSearch extends StatelessWidget {
-  const CustomMaterialSearch({
+class CustomSearchFiled extends StatelessWidget {
+  const CustomSearchFiled({
     super.key,
   });
 
