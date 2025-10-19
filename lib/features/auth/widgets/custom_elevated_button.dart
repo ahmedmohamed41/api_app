@@ -22,10 +22,10 @@ class CustomElevatedButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.all(16),
         child: Text(
           text,
-          style:  TextStyle(
+          style: TextStyle(
             color: fgColor,
             fontWeight: FontWeight.bold,
           ),

@@ -34,6 +34,9 @@ flutter:
     - assets/images/test/test1.png
     - assets/images/test/test2.png
     - assets/images/test/test3.png
+    - assets/images/test/dollar Background.png
+    - assets/images/test/V.D-e36aebe0.png
+    - assets/images/test/bg_sandwaish.png
   # example:
   # fonts:
   #   - family: Schyler

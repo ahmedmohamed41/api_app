@@ -1,3 +1,4 @@
+import 'package:api_app/features/auth/view/signup_view.dart';
 import 'package:api_app/root.dart';
 import 'package:flutter/material.dart';
 

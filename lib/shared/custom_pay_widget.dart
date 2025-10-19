@@ -9,8 +9,10 @@ class CustomPayWidget extends StatelessWidget {
     super.key,
     required this.textPay,
     required this.textButtom,
+    this.payButtom,
   });
   final String textPay, textButtom;
+  final void Function()? payButtom;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,7 +51,7 @@ class CustomPayWidget extends StatelessWidget {
             CustomElevatedButton(
               fgColor: AppColors.white,
               bgColor: AppColors.primary,
-              onPressed: () {},
+              onPressed: payButtom,
               text: textButtom,
             ),
           ],

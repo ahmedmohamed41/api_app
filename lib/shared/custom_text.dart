@@ -19,6 +19,9 @@ class CustomText extends StatelessWidget {
     return Text(
       textAlign: textAlign,
       text,
+      maxLines: 2,
+      textScaler: const TextScaler.linear(1.0),
+      overflow: TextOverflow.ellipsis,
       style: TextStyle(
         color: color,
         fontWeight: fontWeight,

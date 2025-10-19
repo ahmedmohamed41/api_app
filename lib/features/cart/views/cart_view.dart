@@ -1,4 +1,5 @@
 import 'package:api_app/features/cart/widgets/custom_card_widget.dart';
+import 'package:api_app/features/checkout/views/checkout_views.dart';
 import 'package:api_app/shared/custom_pay_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class CartView extends StatefulWidget {
 }
 
 class _CartViewState extends State<CartView> {
-  int number = 20;
+  int number = 10;
   List<int> quintites = [];
   @override
   void initState() {
@@ -58,12 +59,41 @@ class _CartViewState extends State<CartView> {
                   itemCount: quintites.length,
                 ),
               ),
-              const CustomPayWidget(
-                textPay: '99.99',
-                textButtom: 'Checkout',
-              ),
             ],
           ),
+        ),
+      ),
+
+      bottomSheet: Container(
+        height: 85,
+        padding: const EdgeInsets.symmetric(vertical: 5),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25),
+            topRight: Radius.circular(25),
+          ),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 5,
+              blurStyle: BlurStyle.solid,
+            ),
+          ],
+        ),
+
+        child: CustomPayWidget(
+          payButtom: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) {
+                  return const CheckoutViews();
+                },
+              ),
+            );
+          },
+          textPay: '99.99',
+          textButtom: 'Checkout',
         ),
       ),
     );

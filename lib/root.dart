@@ -32,6 +32,9 @@ class _RootState extends State<Root> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: screens[currentScreen] == screens[screens.length - 1]
+          ? AppColors.primary
+          : AppColors.white,
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: controller,

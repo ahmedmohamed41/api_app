@@ -1,4 +1,5 @@
 import 'package:api_app/core/constant/app_colors.dart';
+import 'package:api_app/features/cart/widgets/custom_icon_text_button.dart';
 import 'package:api_app/shared/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -49,17 +50,9 @@ class CustomCardWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    FloatingActionButton(
-                      backgroundColor: AppColors.primary,
-                      mini: true,
-                      onPressed: onMin,
-                      child: const Text(
-                        '-',
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 20,
-                        ),
-                      ),
+                    CustomIconTextButton(
+                      onMin: onMin,
+                      sign: '-',
                     ),
                     const Gap(17),
                     Text(
@@ -67,17 +60,9 @@ class CustomCardWidget extends StatelessWidget {
                       style: const TextStyle(fontSize: 18),
                     ),
                     const Gap(17),
-                    FloatingActionButton(
-                      backgroundColor: AppColors.primary,
-                      mini: true,
-                      onPressed: onAdd,
-                      child: const Text(
-                        '+',
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 20,
-                        ),
-                      ),
+                    CustomIconTextButton(
+                      onMin: onAdd,
+                      sign: '+',
                     ),
                   ],
                 ),
