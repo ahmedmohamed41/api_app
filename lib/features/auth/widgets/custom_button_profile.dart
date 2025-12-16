@@ -1,6 +1,7 @@
 import 'package:api_app/core/constant/app_colors.dart';
 import 'package:api_app/shared/custom_text.dart' show CustomText;
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class CustomButtonProfile extends StatelessWidget {
   const CustomButtonProfile({
@@ -8,25 +9,34 @@ class CustomButtonProfile extends StatelessWidget {
     required this.bgColor,
     required this.fgColor,
     required this.title,
-    required this.icon,
+    this.icon,
+    this.onTap,
+    this.height,
+    this.radius,
+    this.isIcon = false,
   });
   final Color bgColor, fgColor;
   final String title;
-  final IconData icon;
+  final IconData? icon;
+  final void Function()? onTap;
+  final double? height;
+  final double? radius;
+  final bool isIcon;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
-        height: 60,
+        height: height ?? 60,
         width: 150,
         decoration: BoxDecoration(
           color: bgColor,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.white, width: 3),
+          borderRadius: BorderRadius.circular(radius ?? 20),
+          border: Border.all(color: AppColors.primary, width: 1),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomText(
               text: title,
@@ -34,9 +44,13 @@ class CustomButtonProfile extends StatelessWidget {
               fontWeight: FontWeight.bold,
               size: 16,
             ),
-            Icon(
-              icon,
-              color: fgColor,
+            const Gap(5),
+            Visibility(
+              visible: isIcon,
+              child: Icon(
+                icon,
+                color: fgColor,
+              ),
             ),
           ],
         ),

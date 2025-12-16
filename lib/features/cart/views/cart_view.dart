@@ -1,3 +1,4 @@
+import 'package:api_app/core/constant/app_assets.dart';
 import 'package:api_app/features/cart/widgets/custom_card_widget.dart';
 import 'package:api_app/features/checkout/views/checkout_views.dart';
 import 'package:api_app/shared/custom_pay_widget.dart';
@@ -49,7 +50,7 @@ class _CartViewState extends State<CartView> {
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) => CustomCardWidget(
                     number: quintites[index],
-                    imagePath: 'assets/images/test/test3.png',
+                    imagePath: ImageAssets.test3Image,
                     title: 'Humburgar',
                     desc: 'Veggie Burger',
                     onRemove: () {},

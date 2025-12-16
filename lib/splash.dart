@@ -1,5 +1,7 @@
+import 'package:api_app/core/constant/app_assets.dart';
 import 'package:api_app/core/constant/app_colors.dart';
-import 'package:api_app/features/auth/view/signup_view.dart';
+import 'package:api_app/features/auth/data/auth_repo.dart';
+import 'package:api_app/features/auth/view/sign_in_view.dart';
 import 'package:api_app/root.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -56,17 +58,39 @@ class _SplashViewState extends State<SplashView>
         );
 
     _controller.forward(); // start animation
-
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SignupView(),
-          ),
-        );
+    AuthRepo authRepo = AuthRepo();
+    Future<void> checkLogin() async {
+      try {
+        final user = await authRepo.autoLogin();
+        if (!mounted) return;
+        if (authRepo.isGuest) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (c) => const Root()),
+          );
+        } else if (user != null) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (c) => const Root()),
+          );
+        } else {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (c) => const SignInView()),
+          );
+        }
+      } catch (e) {
+        debugPrint('Auto login failed: $e');
+        if (mounted) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const SignInView()),
+          );
+        }
       }
-    });
+    }
+
+    Future.delayed(const Duration(seconds: 3), checkLogin);
   }
 
   @override
@@ -88,7 +112,7 @@ class _SplashViewState extends State<SplashView>
               child: SlideTransition(
                 position: _logoSlideAnimation,
                 child: SvgPicture.asset(
-                  'assets/images/logo/logo.svg',
+                  SvgAssets.splashLogo,
                   width: 200,
                 ),
               ),
@@ -97,7 +121,7 @@ class _SplashViewState extends State<SplashView>
             SlideTransition(
               position: _imageSlideAnimation,
               child: Image.asset(
-                'assets/images/splash/splash.png',
+                ImageAssets.splashImage,
                 width: double.infinity,
               ),
             ),

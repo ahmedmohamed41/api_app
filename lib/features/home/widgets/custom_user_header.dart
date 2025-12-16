@@ -1,3 +1,4 @@
+import 'package:api_app/core/constant/app_assets.dart';
 import 'package:api_app/core/constant/app_colors.dart';
 import 'package:api_app/shared/custom_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +19,7 @@ class CustomUserHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SvgPicture.asset(
-              'assets/images/logo/logo.svg',
+              SvgAssets.splashLogo,
               // ignore: deprecated_member_use
               color: AppColors.primary,
               height: 35,

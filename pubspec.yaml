@@ -14,6 +14,11 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.2.1
   gap: ^3.0.1
+  dio: ^5.9.0
+  shared_preferences: ^2.5.3
+  skeletonizer: ^2.1.0+1
+  image_picker: ^1.2.1
+  lottie: ^3.3.2
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -27,16 +32,9 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/logo/logo.svg
     - assets/images/splash/splash.png
-    - assets/images/test/test.png
-    - assets/images/test/sandwaish_details.png
-    - assets/images/test/test1.png
-    - assets/images/test/test2.png
-    - assets/images/test/test3.png
-    - assets/images/test/dollar Background.png
-    - assets/images/test/V.D-e36aebe0.png
-    - assets/images/test/bg_sandwaish.png
+    - assets/images/logo/logo.svg
+    - assets/images/test/
   # example:
   # fonts:
   #   - family: Schyler

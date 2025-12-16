@@ -1,5 +1,5 @@
-import 'package:api_app/features/auth/view/signup_view.dart';
-import 'package:api_app/root.dart';
+import 'package:api_app/core/routes_manager/route_generator.dart';
+import 'package:api_app/core/routes_manager/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        splashColor: Colors.transparent,
+        scaffoldBackgroundColor: Colors.white,
+      ),
       debugShowCheckedModeBanner: false,
-      home: Root(),
+      onGenerateRoute: RouteGenerator.getRoute,
+      initialRoute: Routes.splashRoute,
     );
   }
 }

@@ -12,29 +12,32 @@ class CustomTextFiled extends StatelessWidget {
   final String lable, hintText;
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      cursorColor: AppColors.white,
-      style: const TextStyle(color: AppColors.white),
-      decoration: InputDecoration(
-        errorStyle: const TextStyle(fontWeight: FontWeight.bold),
-        hoverColor: Colors.white,
-        focusColor: AppColors.white,
-        hintText: hintText,
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        label: Text(
-          lable,
-          style: const TextStyle(color: AppColors.grey),
-        ),
-        fillColor: AppColors.primary,
-        filled: true,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: AppColors.white),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: AppColors.white),
+    return SizedBox(
+      height: 50,
+      child: TextField(
+        controller: controller,
+        cursorColor: AppColors.primary,
+        style: const TextStyle(color: AppColors.primary),
+        decoration: InputDecoration(
+          errorStyle: const TextStyle(fontWeight: FontWeight.bold),
+          // hoverColor: Colors.white,
+          focusColor: AppColors.white,
+          hintText: hintText,
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          label: Text(
+            lable,
+            style: const TextStyle(color: AppColors.primary),
+          ),
+          fillColor: AppColors.white,
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: const BorderSide(color: AppColors.primary),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: const BorderSide(color: AppColors.primary),
+          ),
         ),
       ),
     );

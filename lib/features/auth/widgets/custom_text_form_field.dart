@@ -22,14 +22,12 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: widget.controller,
-
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'please fill ${widget.hint}';
         }
         return null;
       },
-
       cursorColor: AppColors.primary,
       obscureText: obscureText,
       decoration: InputDecoration(
@@ -49,12 +47,21 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         hintText: widget.hint,
         fillColor: AppColors.white,
         filled: true,
-
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: const BorderSide(
+            color: Colors.red,
+          ),
+        ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(20),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: const BorderSide(color: Colors.red),
         ),
       ),
     );

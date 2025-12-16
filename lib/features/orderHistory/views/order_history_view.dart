@@ -1,3 +1,4 @@
+import 'package:api_app/core/constant/app_assets.dart';
 import 'package:api_app/features/orderHistory/widgets/custom_card_ord_history.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class OrderHistoryView extends StatelessWidget {
           child: ListView.builder(
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) => CustomCardOrdHistory(
-              imagePath: 'assets/images/test/test3.png',
+              imagePath: ImageAssets.test3Image,
               title: 'Humburgar Humburgar',
               qty: 3,
               price: 20,

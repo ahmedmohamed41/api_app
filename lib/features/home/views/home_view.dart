@@ -1,3 +1,4 @@
+import 'package:api_app/core/constant/app_assets.dart';
 import 'package:api_app/features/home/widgets/custom_material_search.dart';
 import 'package:api_app/features/home/widgets/card_item.dart';
 import 'package:api_app/features/home/widgets/custom_user_header.dart';
@@ -59,7 +60,7 @@ class _HomeViewState extends State<HomeView> {
                 delegate: SliverChildBuilderDelegate(
                   childCount: 6,
                   (context, index) => const CardItem(
-                    pathImage: 'assets/images/test/test.png',
+                    pathImage: ImageAssets.testImage,
                     title: 'Cheeseburger',
                     subTitle: "Wendy's Burger",
                     rate: '4.9',

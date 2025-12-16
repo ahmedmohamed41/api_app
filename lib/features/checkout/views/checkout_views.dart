@@ -1,3 +1,4 @@
+import 'package:api_app/core/constant/app_assets.dart';
 import 'package:api_app/core/constant/app_colors.dart';
 import 'package:api_app/features/auth/widgets/custom_elevated_button.dart';
 import 'package:api_app/features/checkout/widgets/custom_order_summary_item.dart';
@@ -73,7 +74,7 @@ class _CheckoutViewsState extends State<CheckoutViews> {
               ),
               tileColor: AppColors.redOf,
               leading: Image.asset(
-                'assets/images/test/dollar Background.png',
+              ImageAssets.dollarImage,
                 height: 60,
               ),
               title: const CustomText(
@@ -82,10 +83,13 @@ class _CheckoutViewsState extends State<CheckoutViews> {
                 fontWeight: FontWeight.bold,
                 size: 18,
               ),
+
               trailing: Radio<String>(
                 activeColor: Colors.white,
                 value: 'Cash',
+                // ignore: deprecated_member_use
                 groupValue: selectedMethod,
+                // ignore: deprecated_member_use
                 onChanged: (value) => setState(() => selectedMethod = value!),
               ),
             ),
@@ -98,7 +102,7 @@ class _CheckoutViewsState extends State<CheckoutViews> {
               ),
               tileColor: Colors.blue.shade900,
               leading: Image.asset(
-                'assets/images/test/V.D-e36aebe0.png',
+               ImageAssets.vdisae36aebe0Image,
                 height: 20,
               ),
               title: const CustomText(
@@ -116,7 +120,9 @@ class _CheckoutViewsState extends State<CheckoutViews> {
               trailing: Radio<String>(
                 activeColor: Colors.white,
                 value: 'Visa',
+                // ignore: deprecated_member_use
                 groupValue: selectedMethod,
+                // ignore: deprecated_member_use
                 onChanged: (value) => setState(() => selectedMethod = value!),
               ),
             ),
